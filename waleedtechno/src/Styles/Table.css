@@ -1,0 +1,76 @@
+body {
+  background: linear-gradient(to bottom right, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* الحاوية العامة */
+.container {
+  width: 153vh;
+  height: 85vh;
+  background-color: rgb(245 240 240 / 60%);
+  padding: 26px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 9px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* الأزرار */
+.title-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.title-home h1 {
+  color: #bfb7de;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(357deg, #115293 0%, #c0b6dd 100%);
+}
+.but {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.but button {
+  padding: 10px 20px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.but button:hover {
+  background-color: #115293;
+}
+
+/* الجدول */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.user-table th {
+  background-color: #115293;
+  color: white;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.user-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}

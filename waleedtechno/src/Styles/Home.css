@@ -1,0 +1,442 @@
+.home-container {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.home-topbar {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.auth-buttons .btn {
+  margin-left: 10px;
+  padding: 8px 18px;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  background-color: #5a67d8;
+  transition: 0.3s ease;
+}
+
+.auth-buttons .btn.secondary {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+.auth-buttons .btn:hover {
+  opacity: 0.85;
+}
+/* القسم الجديد */
+.article-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 213vh;
+  margin: 60px auto;
+  padding: 0 50px;
+}
+
+.text-section {
+  flex: 1 1 500px;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.text-section p {
+  line-height: 1.8;
+  margin-bottom: 18px;
+  color: #555;
+}
+
+.image-section {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* ...ابقِ التنسيقات السابقة كما هي */
+/* Animation */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation */
+.text-section {
+  animation: fadeUp 1s ease forwards;
+}
+
+.image-section {
+  animation: slideInRight 1.2s ease forwards;
+}
+
+/*  SERVICES */
+.service-section {
+  padding: 80px 20px;
+  background: #f5f7fa;
+  text-align: center;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.service-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+  animation: popTitle 0.7s ease forwards;
+  width: 215vh;
+}
+
+.service-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 45px;
+}
+
+.service-col {
+  flex: 1 1 300px;
+  background: #d3d8de;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0px 12px 0px 0px rgb(90 103 216);
+  position: relative; /* أضف هذه */
+  overflow: hidden; /* لضمان أن الرقم لا يتجاوز */
+  z-index: 1;
+  transition: transform 0.9s ease;
+  animation: slideUp 1s ease forwards;
+}
+
+.service-col::before {
+  content: attr(data-number);
+  position: absolute;
+  top: 5px;
+  left: 10px; /* تستطيع تغييره حسب الاتجاه */
+  font-size: 2.5rem;
+  color: rgba(42, 52, 141, 0.2); /* لون واضح لكن شفاف */
+  font-weight: bold;
+  z-index: 0;
+  transition: none; /* تأكد أنه ما يتأثر بالـ hover */
+  pointer-events: none; /* لا يتداخل مع التفاعل */
+}
+
+.service-col h3 {
+  font-size: 1.5rem;
+  color: #4a56e2;
+  margin-bottom: 18px;
+  z-index: 1;
+  position: relative;
+}
+
+.service-col p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #555;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-columns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Animations */
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popTitle {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/*  Contact */
+
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  gap: 30px;
+  width: 210vh;
+}
+
+.company-info {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.company-info h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.company-info p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #555;
+}
+
+.company-image {
+  width: 50%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-img {
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Logout */
+
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.user-btn {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 3px solid #ffffff;
+  border-radius: 17px;
+  padding: 7px 25px;
+  cursor: pointer;
+  transition: 0.9s cubic-bezier(0.52, -0.29, 0.19, 1.31);
+}
+
+.user-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  margin-top: 4px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0px 0px 20px 8px rgb(113 90 184);
+  padding: 3px 23px;
+  z-index: 1000;
+}
+
+.dropdown-menu button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f0f0f0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*  Contect  */
+.contact-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  background: linear-gradient(to right, #eef2f3, #f9f9f9);
+  animation: fadeInUp 1s ease-out both;
+  gap: 30px;
+}
+
+.company-info {
+  flex: 1;
+  padding: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: slideInLeft 1.2s ease-out both;
+}
+
+.company-info h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+}
+
+.company-info p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.company-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideInRight 3ms ease-out both;
+}
+
+.company-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.15);
+}
+
+.company-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .company-info,
+  .company-image {
+    flex: 1 1 100%;
+  }
+
+  .company-img {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,277 @@
+/* التصميم العام */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  perspective: 1000px;
+}
+
+/* تصميم الفورم */
+.formstyle {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  width: 520px;
+  max-width: 90%;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.formstyle:hover {
+  transform: translateY(-10px) rotateX(5deg);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(5deg);
+  }
+}
+
+.formstyle h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  position: relative;
+}
+
+.formstyle h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  border-radius: 3px;
+}
+
+/* حقول الإدخال */
+.formstyle input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.formstyle input:focus {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+  transform: scale(1.02);
+}
+
+.formstyle input::placeholder {
+  color: #aaa;
+}
+
+/* الأزرار */
+.but {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.but button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.but button[type="submit"] {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.but button[type="reset"] {
+  background: #f5f5f5;
+  color: #666;
+}
+
+.but button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.but button[type="submit"]:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.but button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.but button:active::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* الروابط والرسائل */
+.nots {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.nots p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.nots a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+
+.nots a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* تأثيرات إضافية */
+.formstyle::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+  z-index: -1;
+  border-radius: 20px;
+  opacity: 0.3;
+  filter: blur(10px);
+  animation: gradientBG 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* تأثيرات عند التحميل */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formstyle {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* تصميم للهواتف */
+@media (max-width: 480px) {
+  .formstyle {
+    padding: 30px 20px;
+  }
+
+  .but {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .but button {
+    width: 100%;
+  }
+}
